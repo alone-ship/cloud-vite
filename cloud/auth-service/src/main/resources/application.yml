@@ -1,0 +1,14 @@
+server:
+  port: 8801
+spring:
+  mvc:
+    static-path-pattern: /static/**
+  application:
+    name: "auth-service"
+  profiles:
+    active: "dev"
+  datasource:
+    username: music
+    password: music
+    url: jdbc:mysql://localhost:3306/music
+    driver-class-name: com.mysql.cj.jdbc.Driver

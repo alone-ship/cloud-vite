@@ -1,0 +1,62 @@
+.account{
+    width: 350px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -70%);
+    color: #d5d4d4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.userheader{
+    box-shadow: 0 0 15px 4px #f0f0f0;
+    width: 220px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.userheader img{
+    width: 100%;
+}
+.content{
+    margin-top: 30px;
+    width: 250px;
+}
+.row{
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+.appname{
+    font-weight: bold;
+    font-size: 25px;
+}
+.row input{
+    width: 100%;
+    background: transparent;
+    border: 1px solid #5b5858;
+    font-size: 16px;
+    height: 37px;
+    padding: 0 10px;
+    border-radius: 5px;
+    outline: none;
+    color: #d5d4d4;
+}
+.row input:focus {
+    box-shadow: 0 0 2px 3px #2c87eb;
+    border-color: #2c87eb;
+}
+.submit{
+    width: 180px;
+    height: 40px;
+    background: #2b69f9;
+    border: 1px solid #2b69f9;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+}
+.submit:hover,.submit:focus {
+    background: #1d46a7;
+    border-color: #1d46a7;
+}

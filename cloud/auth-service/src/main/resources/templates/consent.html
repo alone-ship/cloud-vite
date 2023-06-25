@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Authorization</title>
+    <link rel="icon" type="image/x-icon" href="../static/favicon.ico">
+    <link rel="stylesheet" href="../static/css/index.css">
+    <link rel="stylesheet" href="../static/css/consent.css">
+</head>
+<body>
+    <div class="authorization">
+        <div class="row">
+            <div class="title">
+                <div th:text="${clientName}"/>
+                want obtain hereinafter Permissions：
+            </div>
+        </div>
+        <div class="content">
+            <form action="/oauth2/authorize" method="post">
+                <input type="hidden" name="client_id" th:value="${clientId}">
+                <input type="hidden" name="state" th:value="${state}">
+                <div class="Scopes">
+                    <div th:each="scope: ${scopes}" class="row">
+                        <input class="form-check-input"
+                               type="checkbox"
+                               name="scope"
+                               th:value="${scope.scope}"
+                               th:id="${scope.scope}"
+                               checked>
+                        <label class="scoprDetail" th:for="${scope.scope}"
+                               th:text="${scope.scope}=='profile'?(${scope.description}+'('+${principalName}+')'):${scope.description}"></label>
+                    </div>
+                </div>
+                <div class="row">
+                    <button type="submit" class="submit">
+                        Authorization
+                    </button>
+                    <button type="button" class="cancel">
+                        Cancel
+                    </button>
+                </div>
+                <div class="d-row">
+                    <b style="margin-bottom: 5px">REDIRECT TO</b>
+                    <p><b th:text="${redirectUri}"></b></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
